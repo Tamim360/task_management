@@ -13,7 +13,7 @@ const MyTasks = () => {
     const { data: tasks = [], isLoading, refetch } = useQuery({
         queryKey: ["tasks"],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/tasks?email=${user?.email}`)
+            const res = await fetch(`https://task-management-henna.vercel.app/tasks?email=${user?.email}`)
             const data = await res.json()
             return data
         }
@@ -25,7 +25,7 @@ const MyTasks = () => {
         // console.log(e.target.checked);
         // console.log(id);
         if (e.target.checked) {
-            fetch(`http://localhost:5000/tasks?email=${user?.email}&status=completed&id=${id}`, {
+            fetch(`https://task-management-henna.vercel.app/tasks?email=${user?.email}&status=completed&id=${id}`, {
             method: 'PUT',
         })
         .then(res => res.json())
@@ -33,7 +33,7 @@ const MyTasks = () => {
             refetch()
             console.log(data)})
         } else {
-            fetch(`http://localhost:5000/tasks?email=${user?.email}&status=incompleted&id=${id}`, {
+            fetch(`https://task-management-henna.vercel.app/tasks?email=${user?.email}&status=incompleted&id=${id}`, {
             method: 'PUT',
         })
         .then(res => res.json())

@@ -34,7 +34,7 @@ export default function EditTaskModal({task, refetch}) {
             description: description
         }
 
-        fetch(`http://localhost:5000/tasks/${id}`, {
+        fetch(`https://task-management-henna.vercel.app/tasks/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(task)

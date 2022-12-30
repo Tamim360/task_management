@@ -23,7 +23,7 @@ const TaskDetails = () => {
     // const { data: task , isLoading, refetch } = useQuery({
     //     queryKey: ["tasks", id],
     //     queryFn: async () => {
-    //         const res = await fetch(`http://localhost:5000/tasks/${id}`)
+    //         const res = await fetch(`https://task-management-henna.vercel.app/tasks/${id}`)
     //         const data = await res.json()
     //         return data
     //     }
@@ -33,7 +33,7 @@ const TaskDetails = () => {
 
     const handleComplete = (id) => {
         
-        fetch(`http://localhost:5000/tasks?email=${user?.email}&status=incompleted&id=${id}`, {
+        fetch(`https://task-management-henna.vercel.app/tasks?email=${user?.email}&status=incompleted&id=${id}`, {
             method: 'PUT',
         })
         .then(res => res.json())
@@ -46,7 +46,7 @@ const TaskDetails = () => {
     
     
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/tasks/${id}`, {
+        fetch(`https://task-management-henna.vercel.app/tasks/${id}`, {
             method: 'DELETE',
         })
         .then(res => res.json())

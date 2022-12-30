@@ -36,7 +36,7 @@ export const router = createBrowserRouter([
             {
                 path: '/mytasks/:id',
                 element: <PrivateRoute><TaskDetails /></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/tasks/${params.id}`)
+                loader: ({params}) => fetch(`https://task-management-henna.vercel.app/tasks/${params.id}`)
             }
         ]
     }
